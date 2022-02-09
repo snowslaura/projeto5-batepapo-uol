@@ -71,24 +71,30 @@ font-size: 18px;
 Line-height: 21.09px;
 }
 
-.message-structure{
-min-height: 40px;
-display:flex;
-flex-wrap: wrap;
-flex-direction: row;
-align-items: center;
+.message-container{
 width:100vw;
-font-size: 14px;
+min-height: 40px;
 margin-bottom: 4px;
 }
 
-.entering-leaving{
+.message-structure{
+font-size: 14px;
+margin-left: 8px;
+margin-right: 9px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.moving{
     background-color: #DCDCDC;
 }
 
 .everyone{
     background-color: #FFFFFF; 
+}
 
+.private{
+background-color: #FCDEDE;
 }
 
 .message{ 
@@ -97,8 +103,8 @@ word-wrap:break-word;
 
 .time{
 color: #AAAAAA;
-margin-left:4px;
 }
+
 .nickname{
 font-weight: 700;
 margin-left:4px;
@@ -111,4 +117,13 @@ margin-left:4px;
 
 .direction, .message {
 margin-left:4px;
+
+}
+
+.direction{
+font-weight: 700;
+}
+
+.message-structure span{
+line-height: 20px;
 }
