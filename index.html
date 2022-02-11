@@ -17,54 +17,16 @@
         <img class="logo-uol" src="./img/logo 1.png" alt="logo do bate-papo">
         <img class="vector-uol" src="./img/Vector.png" alt="vector bate-papo">
     </header>
-    <main>
-        <div class="message-container moving">
-            <div class="message-structure ">
-                <span class="time">(09:21:45)</span>  
-                <span class="nickname"><b>João</b></span> 
-                <span class="action"> entra na sala...</span>
-                <span class="message"></span>
-            </div>
-        </div>    
-        <div class="message-container everyone">
-            <div class="message-structure ">
-                <span class="time">(09:22:28)</span>  
-                <span class="nickname"><b>João</b></span> 
-                <span class="action"> para<span class="direction">Todos:</span></span>
-                <span class="message">Bom dia</span>
-            </div>
-        </div>
-        <div class="message-container everyone">
-            <div class="message-structure">
-                <span class="time">(09:22:38) </span>  
-                <span class="nickname"><b>Maria</b></span> 
-                <span class="action"> para<span class="direction">João:</span></span>
-                <span class="message">Oi João :)</span>
-            </div>
-        </div>
-        <div class="message-container private">
-            <div class="message-structure">
-                <span class="time">(09:22:48)</span>  
-                <span class="nickname"><b>João</b></span> 
-                <span class="action"> reservadamente para<span class="direction">Maria:</span></span>
-                <span class="message"> Oi gatinha quer tc?</span>
-            </div>
-        </div>    
-        <div class="message-container moving">
-            <div class="message-structure ">
-                <span class="time">(09:22:58) </span>  
-                <span class="nickname"><b>Maria</b></span> 
-                <span class="action"> sai da sala...</span>
-                <span class="message"></span>
-            </div>
-        </div>
+    <main>       
+        
 
     </main>
     <footer>
-        <input type="text" value="Escreva aqui...">
-        <ion-icon name="paper-plane-outline"></ion-icon>
-        </input>
+        <input type="text" placeholder="  Escreva aqui..."/>
+        <button onclick="sendMessages()"><ion-icon name="paper-plane-outline" ></ion-icon></button>
     </footer>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html> 

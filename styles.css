@@ -38,6 +38,8 @@ margin-right: 22px;
 main{
 background-color: #F3F3F3;
 margin-top: 106px;
+margin-bottom: 82px;
+overflow: scroll;
 }
 
 footer{
@@ -55,6 +57,7 @@ box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 }
 
 footer ion-icon{
+margin-left: 26px;
 margin-right: 26px;
 font-size: 32px;
 }
@@ -85,19 +88,20 @@ padding-top: 10px;
 padding-bottom: 10px;
 }
 
-.moving{
+.message{
+    background-color: #FFFFFF;
+}
+
+.status{
     background-color: #DCDCDC;
 }
 
-.everyone{
-    background-color: #FFFFFF; 
-}
 
-.private{
+.private_message{
 background-color: #FCDEDE;
 }
 
-.message{ 
+.text{ 
 word-wrap:break-word;
 }       
 
@@ -105,7 +109,7 @@ word-wrap:break-word;
 color: #AAAAAA;
 }
 
-.nickname{
+.from{
 font-weight: 700;
 margin-left:4px;
 }
@@ -115,12 +119,12 @@ font-weight: 400;
 margin-left:4px;
 }
 
-.direction, .message {
+.to, .text {
 margin-left:4px;
 
 }
 
-.direction{
+.to{
 font-weight: 700;
 }
 
