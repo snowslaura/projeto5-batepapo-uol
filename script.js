@@ -1,6 +1,9 @@
 let messages = [];
 let content = document.querySelector("main");
 let nameInput;
+let firstTime = true;
+let InicialIndex = 0;
+let lastMessage = "";
 
 // Entrando na Sala
 
@@ -13,30 +16,55 @@ async function loginChat(){
 }
 
 function succed(){
-    console.log("deu certo")
+    
     callMessages();
 }
 
 function error(){
-    console.log("deu errado");
+    
     loginChat();
 }
 
 loginChat()
 
 
+
 // Carregando mensagens do chat
 
 function callMessages(){
+
     const promiseMessage = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages')
     
     promiseMessage.then(function (response) {
         
-        messages=response.data        
+        messages=response.data
+       
 
+        if (firstTime == false){
+
+            for (let i = messages.length-1; i>1 ; i--) {
+                
+               if (lastMessage === messages[i].from + messages[i].text + messages[i].time){
+
+                InicialIndex = i+1;
+
+                break
+
+               } 
+                
+            }
+
+        }
+        
+        
+                
         content.innerhtml= "";
+
+          
            
-        for (let i=0; i<messages.length;i++){
+        for (let i=InicialIndex; i<messages.length;i++){
+
+            
 
            
             if(messages[i].type === "private_message"){
@@ -77,12 +105,21 @@ function callMessages(){
         }
         
                
-        })
+        
       
-    promiseMessage.catch(function (erro){
-    alert(erro)
-    
+        promiseMessage.catch(function (erro){
+        alert(erro)
+        
+        })
+
+                
+        lastMessage = messages[99].from + messages[99].text + messages[99].time;
+
     })
+
+    firstTime = false;
+
+   
 
 }
 
