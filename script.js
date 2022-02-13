@@ -6,26 +6,20 @@ let nameInput;
 
 async function loginChat(){
 
-    let erro = true;
+    nameInput = prompt("Benvinde ao chat Uol, escreva seu nome. Caso não dê certo, digite outro nome");
 
-        while(erro){
+    const promiseParticipants = await axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", {name: nameInput}).then(succed()).catch(error)
 
-            nameInput = prompt("Benvinde ao chat Uol, escreva seu nome. Caso não dê certo, digite outro nome");
-            
-            const promiseParticipants = await axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", 
-            {
-            name: nameInput,
-            })
+}
 
-            if (promiseParticipants.status === 200) {
-                erro = false
-                callMessages();
-               
-            }
+function succed(){
+    console.log("deu certo")
+    callMessages();
+}
 
-            else {alert("Coloque outro nome!")}
-        }
-
+function error(){
+    console.log("deu errado");
+    loginChat();
 }
 
 loginChat()
@@ -67,7 +61,7 @@ function callMessages(){
                 </div>`
             } else if (messages[i].type === "status") {
                 
-                content.innerHTML+= `
+                content.innerHTML += `
                 <div class="message-container ${messages[i].type} data-identifier="message"">
                     <div class="message-structure ">
                         <span class="time">(${messages[i].time})</span>  
